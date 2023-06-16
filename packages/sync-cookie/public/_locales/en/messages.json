@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "sync cookies",
+    "description": "Extension name."
+  },
+  "extDesc": {
+    "message": "sync cookie.",
+    "description": "Extension description."
+  }
+}

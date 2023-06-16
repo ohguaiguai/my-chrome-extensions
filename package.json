@@ -1,0 +1,27 @@
+{
+  "name": "is-docs-chrome-extensions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "lint": "rome format . --write",
+    "start": "pnpm run -r dev",
+    "dev": "pnpm run -r dev",
+    "build": "pnpm run -r build",
+    "release": "pnpm run -r release",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "rome": "^10.0.1"
+  },
+  "lint-staged": {
+    "*": "rome format --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

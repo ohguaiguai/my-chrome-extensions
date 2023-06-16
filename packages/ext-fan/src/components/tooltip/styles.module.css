@@ -1,0 +1,12 @@
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    max-width: 80vw;
+    border-radius: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}

@@ -1,0 +1,20 @@
+[{
+    "id": 1,
+    "priority": 1,
+    "action": {
+        "type": "modifyHeaders",
+        "requestHeaders": [
+            {
+                "header": "origin",
+                "operation": "set",
+                "value": "chrome-extension://hccpcdfkgfedomppoaboebafjgjmohnk"
+            }
+        ]
+    },
+    "condition": {
+        "urlFilter": "https://docs.corp.kuaishou.com/merlot/api/searchs/search",
+        "resourceTypes": [
+            "xmlhttprequest"
+        ]
+    }
+}]

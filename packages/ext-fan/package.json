@@ -1,0 +1,40 @@
+{
+  "name": "DocsFan",
+  "version": "1.6.4",
+  "description": "DocsFan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohnBra/web-extension.git"
+  },
+  "scripts": {
+    "tsc": "tsc --noEmit",
+    "build": "bash ./utils/build.sh",
+    "release": "bash ./utils/release.sh",
+    "dev": "nodemon"
+  },
+  "type": "module",
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "daisyui": "^2.24.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.4",
+    "@types/chrome": "^0.0.193",
+    "@types/node": "^18.6.3",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "autoprefixer": "^10.4.8",
+    "concurrently": "^7.4.0",
+    "fs-extra": "^10.1.0",
+    "nodemon": "^2.0.19",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.7",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4",
+    "vite-plugin-svgr": "^2.2.1"
+  }
+}

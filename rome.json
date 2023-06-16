@@ -1,0 +1,28 @@
+{
+    "formatter": {
+        "indentStyle": "space"
+    },
+    "linter": {
+      "enabled": true,
+      "rules": {
+        "recommended": true,
+        "correctness": {
+            "noUndeclaredVariables": "error",
+            "noUnusedVariables": "error",
+            "noUselessFragments": "error"
+        },
+        "style": {
+            "useFragmentSyntax": "error"
+        },
+        "nursery": {
+            "noConstAssign": "error",
+            "noExplicitAny": "error",
+            "noInvalidConstructorSuper": "error",
+            "useCamelCase": "error",
+            "useExhaustiveDependencies": "error",
+            "useFlatMap": "error",
+            "useValidForDirection": "error"
+        }
+      }
+    }
+  }

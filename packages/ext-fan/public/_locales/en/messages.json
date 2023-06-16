@@ -1,0 +1,54 @@
+{
+    "extName": {
+        "message": "DocsFan",
+        "description": "Extension name."
+    },
+    "extDesc": {
+        "message": "Exclusively for docs fans, this extension is made to boost productivity.",
+        "description": "Extension description."
+    },
+    "displayMode": {
+        "message": "Display mode",
+        "description": "Display mode"
+    },
+    "displayModeLight": {
+        "message": "light",
+        "description": "light"
+    },
+    "displayModeDark": {
+        "message": "dark",
+        "description": "dark"
+    },
+    "displayModeAuto": {
+        "message": "auto",
+        "description": "auto"
+    },
+    "experimental": {
+        "message": "experimental",
+        "description": "experimental"
+    },
+    "tabAutoGroup": {
+        "message": "Auto group docs tabs",
+        "description": "Name of auto group."
+    },
+    "tabAutoGroupTooltip": {
+        "message": "Group all docs tabs together, for easier management.",
+        "description": "Tooltip of auto group."
+    },
+    "tabNav": {
+        "message": "Direct tab",
+        "description": "Direct tab"
+    },
+    "tabNavTooltip": {
+        "message": "Automatically detects and activates existing tabs when openning docs pages",
+        "description": "Tooltip of tab nav"
+    },
+    "likeMe": {
+        "message": "Like",
+        "description": "Like me."
+    },
+    "howTo": {
+        "message": "How to use",
+        "description": "How to use."
+    }
+}

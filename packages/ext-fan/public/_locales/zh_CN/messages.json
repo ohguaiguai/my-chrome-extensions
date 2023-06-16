@@ -1,0 +1,54 @@
+{
+    "extName": {
+        "message": "DocsFan",
+        "description": "扩展名。"
+    },
+    "extDesc": {
+        "message": "docs 宠粉提效专用扩展～",
+        "description": "扩展描述。"
+    },
+    "displayMode": {
+        "message": "显示模式",
+        "description": "显示模式"
+    },
+    "displayModeLight": {
+        "message": "亮色",
+        "description": "亮色"
+    },
+    "displayModeDark": {
+        "message": "暗黑",
+        "description": "暗黑"
+    },
+    "displayModeAuto": {
+        "message": "自动",
+        "description": "自动"
+    },
+    "experimental": {
+        "message": "实验性",
+        "description": "实验性"
+    },
+    "tabAutoGroup": {
+        "message": "页面自动分组",
+        "description": "页面自动分组标题。"
+    },
+    "tabAutoGroupTooltip": {
+        "message": "自动将浏览器中打开的 Docs 页面分组，便于查看。",
+        "description": "页面自动分组悬浮提示。"
+    },
+    "tabNav": {
+        "message": "页面直通车",
+        "description": "页面直通车"
+    },
+    "tabNavTooltip": {
+        "message": "打开新的 Docs 页面时，自动复用已有的标签页，节约内存占用",
+        "description": "链接直达的提示"
+    },
+    "likeMe": {
+        "message": "点个赞吧",
+        "description": "点赞。"
+    },
+    "howTo": {
+        "message": "使用说明",
+        "description": "使用说明。"
+    }
+}
