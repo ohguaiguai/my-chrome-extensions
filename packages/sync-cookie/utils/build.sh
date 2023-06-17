@@ -6,4 +6,4 @@ set -e
 
 pnpm run tsc
 
-npx concurrently 'vite build' 'vite build -c vite.config.content.ts'
+npx concurrently 'vite build' 'vite build -c vite.config.base.ts'

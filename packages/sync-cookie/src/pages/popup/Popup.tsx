@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Button, message, Tooltip, Row, Col, Space } from 'antd';
+import React, { useEffect, useState } from "react";
+import { Button, message, Tooltip, Row, Col, Space } from "antd";
 
-import { StorageService } from '@src/services/storage/StorageService';
-import { TabService } from '@src/services/tab/TabService';
-import { CookieService } from '@src/services/cookie/CookieService';
-import { Service } from '@src/services/Service';
+import { StorageService } from "common/services/storage/StorageService";
+import { TabService } from "common/services/tab/TabService";
+import { CookieService } from "common/services/cookie/CookieService";
+import { Service } from "common/services/Service";
 
-import { CookiesTable } from './CookiesTable';
+import { CookiesTable } from "./CookiesTable";
 
 export const Popup = () => {
   const [cookies, setCookies] = useState<chrome.cookies.Cookie[]>([]);
@@ -21,22 +21,22 @@ export const Popup = () => {
     const cookiesArr = await Service.getInstance(CookieService).getCookies(url);
     setCookies(cookiesArr);
     // 保存获取到的 cookies
-    await Service.getInstance(StorageService).set('prevCookies', cookiesArr);
-    await Service.getInstance(StorageService).set('prevUrl', url + '');
+    await Service.getInstance(StorageService).set("prevCookies", cookiesArr);
+    await Service.getInstance(StorageService).set("prevUrl", url + "");
 
-    message.success('获取成功, 打开未登录站点同步!');
+    message.success("获取成功, 打开未登录站点同步!");
     // window.close();
   };
 
   const syncCookie = async (
     cookie: chrome.cookies.Cookie,
     prevUrl: string,
-    curUrl: string
+    curUrl: string,
   ) => {
     return chrome.cookies.remove(
       {
         url: prevUrl,
-        name: cookie.name
+        name: cookie.name,
       },
       () => {
         chrome.cookies.set({
@@ -46,7 +46,7 @@ export const Popup = () => {
           path: cookie.path,
           secure: cookie.secure,
           sameSite: cookie.sameSite,
-          expirationDate: 24 * 30 * 60 * 60 * 1000 + Date.now()
+          expirationDate: 24 * 30 * 60 * 60 * 1000 + Date.now(),
         });
 
         // 保证先设置当前路径下的 cookie, 再设置原来路径下的 cookie
@@ -58,40 +58,40 @@ export const Popup = () => {
             path: cookie.path,
             secure: cookie.secure,
             sameSite: cookie.sameSite,
-            expirationDate: 24 * 30 * 60 * 60 * 1000 + Date.now()
+            expirationDate: 24 * 30 * 60 * 60 * 1000 + Date.now(),
           });
         }, 0);
-      }
+      },
     );
   };
 
   // 同步 cookie 到当前站点
   const syncCookies = async () => {
     const { url: curUrl } = await Service.getInstance(
-      TabService
+      TabService,
     ).getCurrentTabAndUrl();
 
     const prevUrl = await Service.getInstance(StorageService).get(
-      'prevUrl',
-      ''
+      "prevUrl",
+      "",
     );
 
     if (prevUrl && prevUrl === curUrl) {
-      message.warning('还未切换站点，打开未登录站点!');
+      message.warning("还未切换站点，打开未登录站点!");
       window.close();
       return;
     }
 
     const prevCookies = await Service.getInstance(StorageService).get(
-      'prevCookies',
-      []
+      "prevCookies",
+      [],
     );
 
     const pending = prevCookies.map((cookie) => {
       return syncCookie(cookie, prevUrl, curUrl);
     });
     await Promise.all(pending);
-    message.success('同步成功, 刷新页面!');
+    message.success("同步成功, 刷新页面!");
     window.close();
   };
 

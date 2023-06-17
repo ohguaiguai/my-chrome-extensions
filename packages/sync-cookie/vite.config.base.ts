@@ -8,6 +8,7 @@ const outDir = resolve(__dirname, "dist");
 const publicDir = resolve(__dirname, "public");
 
 export default {
+  css: {},
   plugins: [
     svgr({
       svgrOptions: {
@@ -30,9 +31,8 @@ export default {
     rollupOptions: {
       input: {},
       output: {
-        entryFileNames: (chunk: {
-          name: string;
-        }) => `src/pages/${chunk.name}/index.js`,
+        entryFileNames: (chunk: { name: string }) =>
+          `src/pages/${chunk.name}/index.js`,
       },
     },
   },

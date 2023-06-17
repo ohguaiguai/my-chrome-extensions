@@ -31,5 +31,5 @@
     "vite.config.ts",
     "vite.config.base.ts",
     "package.json"
-  ],
+  ]
 }
