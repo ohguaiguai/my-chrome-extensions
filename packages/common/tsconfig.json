@@ -1,6 +1,9 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
+    "types": ["node", "chrome"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -12,6 +15,10 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noEmit": true,
-    "baseUrl": "."
-  }
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {},
+    "composite": true
+  },
+  "include": ["services", "utils"]
 }
