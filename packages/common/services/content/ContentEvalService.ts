@@ -1,4 +1,4 @@
-import { Service } from "@src/services/Service";
+import { Service } from "../Service";
 import { MessageService } from "../message/MessageService";
 
 const EVAL_JS = "EVAL_JS";

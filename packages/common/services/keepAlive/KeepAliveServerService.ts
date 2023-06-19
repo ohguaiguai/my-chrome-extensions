@@ -1,4 +1,4 @@
-import { Debug, Info } from "@src/utils/logger";
+import { Debug, Info } from "../../utils/logger";
 import { Service } from "../Service";
 import { KEEP_ALIVE_DISCONNECT, KEEP_ALIVE_HEART_BEAT } from "./constants";
 

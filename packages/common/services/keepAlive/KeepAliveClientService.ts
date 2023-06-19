@@ -1,4 +1,4 @@
-import { Debug, Verbose } from "@src/utils/logger";
+import { Debug, Verbose } from "../../utils/logger";
 import { Service } from "../Service";
 import {
   KEEP_ALIVE_HEART_BEAT,
