@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, message, Tooltip, Row, Col, Space } from "antd";
+import { Button, message, Tooltip, Space } from "antd";
 
 import { StorageService } from "common/services/storage/StorageService";
 import { TabService } from "common/services/tab/TabService";
@@ -10,6 +10,16 @@ import { CookiesTable } from "./CookiesTable";
 
 export const Popup = () => {
   const [cookies, setCookies] = useState<chrome.cookies.Cookie[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const cookiesArr = await Service.getInstance(StorageService).get(
+        "prevCookies",
+        [],
+      );
+      setCookies(cookiesArr);
+    })();
+  }, []);
 
   // 获取已登录站点 cookies
   const getCookiesAndStore = async () => {

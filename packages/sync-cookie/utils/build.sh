@@ -2,8 +2,9 @@
 
 set -e
 
-# rm -rf dist/
+rm -rf dist/
 
 pnpm run tsc
 
-npx concurrently 'vite build' 'vite build -c vite.config.base.ts'
+# npx concurrently 'vite build'
+npx vite build
