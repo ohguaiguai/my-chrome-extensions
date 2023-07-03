@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Button, message, Tooltip, Space } from "antd";
 
 import { StorageService } from "common/services/storage/StorageService";
 import { TabService } from "common/services/tab/TabService";
@@ -34,8 +33,8 @@ export const Popup = () => {
     await Service.getInstance(StorageService).set("prevCookies", cookiesArr);
     await Service.getInstance(StorageService).set("prevUrl", url + "");
 
-    message.success("获取成功, 打开未登录站点同步!");
-    // window.close();
+    alert("获取成功, 打开未登录站点同步!");
+    window.close();
   };
 
   const syncCookie = async (
@@ -87,7 +86,7 @@ export const Popup = () => {
     );
 
     if (prevUrl && prevUrl === curUrl) {
-      message.warning("还未切换站点，打开未登录站点!");
+      alert("还未切换站点，打开未登录站点!");
       window.close();
       return;
     }
@@ -101,30 +100,15 @@ export const Popup = () => {
       return syncCookie(cookie, prevUrl, curUrl);
     });
     await Promise.all(pending);
-    message.success("同步成功, 刷新页面!");
+    alert("同步成功, 刷新页面!");
     window.close();
   };
 
   return (
     <>
-      <Space direction='vertical'>
-        <Space>
-          <Tooltip title='获取当前站点 cookie'>
-            <Button
-              disabled={cookies.length !== 0}
-              onClick={getCookiesAndStore}
-            >
-              获取
-            </Button>
-          </Tooltip>
-          <Tooltip title='同步已获取到的 cookie 到当前站点'>
-            <Button disabled={cookies.length === 0} onClick={syncCookies}>
-              同步
-            </Button>
-          </Tooltip>
-        </Space>
-        <CookiesTable cookies={cookies} />
-      </Space>
+      <button onClick={getCookiesAndStore}>获取/再次获取</button>
+      <button onClick={syncCookies}>同步</button>
+      <CookiesTable cookies={cookies} />
     </>
   );
 };

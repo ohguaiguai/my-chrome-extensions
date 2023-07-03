@@ -1,5 +1,4 @@
-import React from 'react';
-import { Table } from 'antd';
+import React from "react";
 
 interface ICookiesTableProps {
   cookies: chrome.cookies.Cookie[];
@@ -7,26 +6,22 @@ interface ICookiesTableProps {
 
 export const CookiesTable = (props: ICookiesTableProps) => {
   const { cookies } = props;
-
-  const columns = [
-    {
-      title: 'name',
-      dataIndex: 'name',
-      key: 'name'
-    },
-    {
-      title: 'value',
-      dataIndex: 'value',
-      key: 'value'
-    },
-    {
-      title: 'domain',
-      dataIndex: 'domain',
-      key: 'domain'
-    }
-  ];
-
   return (
-    <Table style={{ width: '100%' }} dataSource={cookies} columns={columns} />
+    <table>
+      <tr>
+        <th>name</th>
+        <th>value</th>
+        <th>path</th>
+      </tr>
+      <tbody>
+        {cookies.map((cookie) => (
+          <tr>
+            <td>{cookie.name}</td>
+            <td>{cookie.value}</td>
+            <td>{cookie.path}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 };

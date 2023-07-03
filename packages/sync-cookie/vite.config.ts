@@ -44,7 +44,7 @@ export default defineConfig({
           `src/pages/${chunk.name}/index.js`,
       },
       manualChunks: {
-        antd: ["antd"],
+        // antd: ["antd"],
         react: ["react"],
       },
     },
